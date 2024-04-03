@@ -102,26 +102,26 @@
 				mesh2.rotation.y = - Math.PI / 2;
 				mesh2.layers.set( 2 ); // display in right eye only
 				scene.add( mesh2 );
-
+				
 				//
-
+				
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				
-                // NOTE(paris): This is what I added based off of: 
-                renderer.xr.addEventListener('sessionstart', () => {
-                    console.log('[index@sessionStart] video.paused:', video.paused);
+				// NOTE(paris): Added based on: https://github.com/aframevr/aframe/issues/5469#issuecomment-1974371300
+				renderer.xr.addEventListener('sessionstart', () => {
+						console.log('[index@sessionStart] video.paused:', video.paused);
 
-                    const handlePaused = () => {
-                        console.log('[index@sessionStart@handlePaused] video.paused:', video.paused);
-                        video.removeEventListener("pause", handlePaused);
-                        video.play();
-                        console.log('[index@sessionStart@handlePaused] after we called play() video.paused:', video.paused);
-                    };
-                    video.addEventListener("pause", handlePaused);
-                })
-                renderer.xr.enabled = true;
+						const handlePaused = () => {
+								console.log('[index@sessionStart@handlePaused] video.paused:', video.paused);
+								video.removeEventListener("pause", handlePaused);
+								video.play();
+								console.log('[index@sessionStart@handlePaused] after we called play() video.paused:', video.paused);
+						};
+						video.addEventListener("pause", handlePaused);
+				})
+				renderer.xr.enabled = true;
 				renderer.xr.setReferenceSpaceType( 'local' );
 				container.appendChild( renderer.domElement );
 
