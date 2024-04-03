@@ -14,6 +14,5 @@ This is a repro of a bug where on Vision Pro using three.js and WebXR, a video e
 
 Here is what the bug looks like:
 
-![repro](https://github.com/jparismorgan/threejs-webxr-vision-pro-video/blob/main/repro.mp4)
+https://github.com/jparismorgan/threejs-webxr-vision-pro-video/assets/1396242/745be62e-0fa9-4417-bbf4-1a1ae8d97c62
 
-<video src="https://github.com/rayytsn9/ROBOTT/assets/79029536/62f541aa-aa8c-43f5-9ead-4b7a2e0d7c2a" width="300" />
